@@ -1,3 +1,31 @@
+#INSTALANDO O MYSQL
+apt search mysql-server #vê informações sobre ele.
+apt install mysql-server-8.0 #instalando a versão mais atual dele.
+mysql -u root -p #permite acessar o mysql com privilégios de usuário root.
+show databases; #mostra os bancos de dados existentes.
+create databae meubanco; #criando um banco de dados chamado meubanco.
+use meubanco; #escolhendo o banco de dados chamado meubanco para trabalhar.
+
+#criando uma tabela chamada pessoas, informando que a quantidade de pessoas e de númeor inteiro(int) 
+#pedindo para que seja informado os seguintes dados: nome, sobrenome, endereco e cidade. 
+#varchar representa a quantidade caracteres que podem ser inseridos para cada campo.
+create table pessoas (pessoaid int, nome varchar (50), sobrenome varchar(50), marchar(50),
+ endereco varchar(100), cidade varchar(50));
+
+show tables; #mostra as tabelas existentes no banco de dados.
+
+select * FROM pessoas; #selecionando tudo que tem dentro da tabela pessoas.
+
+#inserindo na tabela como exemplo o primeiro usuário que seu nome é Carlos, sobrenome da Silva, 
+#seu endereço pe Av. do Carmo nº 500 e que a sua cidade é Recife-PE
+insert into pessoas(pessoaid, nome, endereco,cidade) VALUES (1, 'Carlos', 'da Silva', 'Av. do Carmo,500', 'Recife-PE');
+
+exit # quando não se tem mais nada para acrescentar ou alterar é usado este comando para sair do Mysql.
+
+
+
+
+#SCRIPT 
 #criar um diretório. obs: é importante estar como usuário root - sudo su    
 mkdir scripts2 
 
@@ -6,6 +34,7 @@ nano script-iac2.sh
 
 
 #esse comando é importante ser inserido no topo do arquivo
+#o comando apt-get é mais indicado para ser usado quando se trata de scripts.
 #!/bin/bash
 apt-get update  #atualizando a lista de pacotes
 apt-get upgrade #atualizando para uma nova versão da plataforma

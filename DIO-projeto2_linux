@@ -1,0 +1,25 @@
+#criar um diretório. obs: é importante estar como usuário root - sudo su    
+mkdir scripts2 
+
+#criar um arquivo no nano 
+nano script-iac2.sh
+
+
+#esse comando é importante ser inserido no topo do arquivo
+#!/bin/bash
+apt-get update  #atualizando a lista de pacotes
+apt-get upgrade #atualizando para uma nova versão da plataforma
+apt-get install apache2 -y #instalando o apache2
+apt-get install unzip -y  #instalando o unzip
+
+cd /tmp
+wget https: //github.com/denilsonbonatti/linux-site-dio/archive/refs/heads/mainzip #repositório do github indicado
+unzip main.zip #usando o unzip para abrir o arquivo main.zip
+
+cd linux-site-dio-main
+cp - R * /var/www/html/ #copiando tudo do repositório para a pasta principal do apache2
+
+CTRL + O #salva o que foi inserido no nano
+CTRL + X #sai do nano
+
+chmod +x script-iac2.sh #modifica para que o arquivo script-iac2.sh possa ser executado.

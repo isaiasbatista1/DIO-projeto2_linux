@@ -1,3 +1,34 @@
+#SAMBA(SMB) - é um daemon(serviço utilizado em segundo plano)
+apt search samba #da uma lista das utilidades desse programa.
+apt install samba -y #instala o samba e responde "yes" para todos os questionamentos que sejam feitos.
+
+mkdir publica #criar um diretório chamdo publica
+chmod 777 publica #todos tem acesso total nesse diretório.
+
+systemctl restart smdb #restarta o samba
+systemctl status smdb #vê se ele está funcionando
+systemctl enable smdb #Faz com o que o serviço suba sozinho caso reinicie o sistema.
+
+nano /etc/samba/smb.conf #abri o nano nesse diretório
+#inserir esse comando dentro do nao para informar:
+#o caminho, que é permitido fazer a leitura, qualquer pessoa pode acessar e todos são convidados.
+[publica]
+path = /disk2/publica
+writable = yes
+guest ok = yes
+guest only = yes
+
+CTRL + O e CTRL + X #para salvar e depois sair do nano.
+
+
+
+#APACHE 2 
+apt install apache2 -y #instalando o apache
+systemctl statys apache2 #verifica se o apache está funcionando
+
+
+
+
 #INSTALANDO O MYSQL
 apt search mysql-server #vê informações sobre ele.
 apt install mysql-server-8.0 #instalando a versão mais atual dele.
@@ -48,7 +79,6 @@ unzip main.zip #usando o unzip para abrir o arquivo main.zip
 cd linux-site-dio-main
 cp - R * /var/www/html/ #copiando tudo do repositório para a pasta principal do apache2
 
-CTRL + O #salva o que foi inserido no nano
-CTRL + X #sai do nano
+#CTRL + O salva o que foi inserido no nano e CTRL + X #sai do nano.
 
 chmod +x script-iac2.sh #modifica para que o arquivo script-iac2.sh possa ser executado.

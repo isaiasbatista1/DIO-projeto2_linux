@@ -26,10 +26,10 @@ exit # quando não se tem mais nada para acrescentar ou alterar é usado este co
 
 
 #SCRIPT 
-#criar um diretório. obs: é importante estar como usuário root - sudo su    
+#criar um diretório chamado scripts2. obs: é importante estar como usuário root - sudo su    
 mkdir scripts2 
 
-#criar um arquivo no nano 
+#criar um arquivo no nano chamado script-iac2.sh dentro da pasta scripts2
 nano script-iac2.sh
 
 
